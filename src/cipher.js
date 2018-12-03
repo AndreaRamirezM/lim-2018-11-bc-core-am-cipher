@@ -1,21 +1,19 @@
 window.cipher = {
 
-  cifrado : (texto, numero) => {
+  cifrado : (offset, string) => {
 
-    let respuestaCipher = ""; //declaro una cadena vacia que sera mi cadena respuesta
-    const espacio = String.fromCharCode(32) //definimos un espacio
+    let respuestaCipher = ""; 
+    const espacio = String.fromCharCode(32)
 
-    for (let i = 0; i < texto.length; i++) {
-      if (espacio != texto.charAt(i)) {
-        const asciiOriginal = texto.charCodeAt(i);
-        /* Ponemos la formula porque queremos solo de la A -Z , si no leera todo el codigo ASCII */
-        const nuevoAscii = (asciiOriginal - 65 + numero) % 26 + 65;
+    for (let i = 0; i < offset.length; i++) {
+      if (espacio != offset.charAt(i)) {
+        const asciiOriginal = offset.charCodeAt(i);
+        const nuevoAscii = (asciiOriginal - 65 + string) % 26 + 65;
         const nuevoCaracter = String.fromCharCode(nuevoAscii);
-        respuestaCipher = respuestaCipher + nuevoCaracter; //concateno la nueva letra a mi cadena respuesta
+        respuestaCipher = respuestaCipher + nuevoCaracter; 
       }
       else {
-        //concateno el espacio a mi cadena respuesta
-        respuestaCipher = respuestaCipher + espacio;
+            respuestaCipher = respuestaCipher + espacio;
       }
     }
     return respuestaCipher;
@@ -25,13 +23,12 @@ window.cipher = {
   descifrado : (texto, numero) => {
 
     let respuestaCipher = "";
-    const espacio = String.fromCharCode(32) //definimos un espacio
+    const espacio = String.fromCharCode(32) 
 
-    for (let i = 0; i < texto.length; i++) { // posiciones bucle  del texto que parametros 
+    for (let i = 0; i < texto.length; i++) { 
       if (espacio != texto.charAt(i)) {
         const primeraLetraAscii = texto.charCodeAt(i);
-        /* Aqui ponemos la formula por que queremos solo de la A -Z , si no leera todo el codigo ASCII */
-        const nuevoAscii = (primeraLetraAscii - 90 - numero) % 26 + 90; // logica =  se pone 90 porque empieza desde la Z a regresar
+        const nuevoAscii = (primeraLetraAscii - 90 - numero) % 26 + 90; 
         const respuesta = String.fromCharCode(nuevoAscii);
         respuestaCipher = respuestaCipher + respuesta;
       }

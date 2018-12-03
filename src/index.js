@@ -6,8 +6,7 @@ const textoRespuesta = document.getElementById('respuesta');
 const btnRefrescar = document.getElementById('refrescar');
 
 btnCifrar.addEventListener('click', () => {
-   alert("Texto cifrado satisfactoriamente");
-  // event.preventDefault();
+    event.preventDefault();
   const valueCajadeTexto = cajadeTexto.value;
   const valuetuclave = parseInt(tuClave.value);
   const valuerespuesta = cipher.cifrado(valueCajadeTexto, valuetuclave);
@@ -16,8 +15,7 @@ btnCifrar.addEventListener('click', () => {
 });
 
 btnDescifrar.addEventListener('click', () => {
-  alert("Texto descifrado satisfactoriamente");
- // event.preventDefault();
+    event.preventDefault();
  const valueCajadeTexto = cajadeTexto.value;
  const valuetuclave = parseInt(tuClave.value);
  const valuerespuesta = cipher.descifrado(valueCajadeTexto, valuetuclave);
@@ -27,7 +25,6 @@ btnDescifrar.addEventListener('click', () => {
 
 btnRefrescar.addEventListener('click', function(event) {
     event.preventDefault();
-  //window.location.src = 'index.html'
   document.getElementById('tuClave').value = "";
   document.getElementById('cajadeTexto').value = "";
   document.getElementById('respuesta').value = "";
