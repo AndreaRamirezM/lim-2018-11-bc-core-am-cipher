@@ -1,34 +1,12 @@
-window.cipher = {
-
-  cifrado : (offset, string) => {
+let encode = (offset, string) => {
 
     let respuestaCipher = ""; 
     const espacio = String.fromCharCode(32)
 
-    for (let i = 0; i < offset.length; i++) {
-      if (espacio != offset.charAt(i)) {
-        const asciiOriginal = offset.charCodeAt(i);
-        const nuevoAscii = (asciiOriginal - 65 + string) % 26 + 65;
-        const nuevoCaracter = String.fromCharCode(nuevoAscii);
-        respuestaCipher = respuestaCipher + nuevoCaracter; 
-      }
-      else {
-            respuestaCipher = respuestaCipher + espacio;
-      }
-    }
-    return respuestaCipher;
-  },
-
-
-  descifrado : (texto, numero) => {
-
-    let respuestaCipher = "";
-    const espacio = String.fromCharCode(32) 
-
-    for (let i = 0; i < texto.length; i++) { 
-      if (espacio != texto.charAt(i)) {
-        const primeraLetraAscii = texto.charCodeAt(i);
-        const nuevoAscii = (primeraLetraAscii - 90 - numero) % 26 + 90; 
+      for (let i = 0; i < string.length; i++) { 
+      if (espacio != string.charAt(i)) {
+        const primeraLetraAscii = string.charCodeAt(i);
+        const nuevoAscii = (primeraLetraAscii - 65 + offset) % 26 + 65; 
         const respuesta = String.fromCharCode(nuevoAscii);
         respuestaCipher = respuestaCipher + respuesta;
       }
@@ -37,6 +15,30 @@ window.cipher = {
       }
     }
     return respuestaCipher;
-  },
+    } 
+    
+let decode = (offset, string) => {
+
+    let respuestaCipher = "";
+    const espacio = String.fromCharCode(32) 
+
+    for (let i = 0; i < string.length; i++) { 
+      if (espacio != string.charAt(i)) {
+        const primeraLetraAscii = string.charCodeAt(i);
+        const nuevoAscii = (primeraLetraAscii - 90 - offset) % 26 + 90; 
+        const respuesta = String.fromCharCode(nuevoAscii);
+        respuestaCipher = respuestaCipher + respuesta;
+      }
+      else {
+        respuestaCipher = respuestaCipher + espacio;
+      }
+    }
+    return respuestaCipher;
+  }
+
+window.cipher = {
+  encode : encode,
+
+  decode : decode,
 
 };
