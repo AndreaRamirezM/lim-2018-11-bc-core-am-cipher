@@ -72,8 +72,13 @@ body {
   
   }
   
-  #imagenPortada {
-      width: 600px;
+  #imagenPortada{
+    display:block;
+    margin: 10px ;
+    align-content: center;
+ 
+}
+
   }
   
   div {
