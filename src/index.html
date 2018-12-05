@@ -1,43 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
+<div>
+<head>
+    <meta charset="utf-8" />
+    <title>Beauty World</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="icon" href="/imag/demo_icon.gif" type="image/gif" sizes="16x16">
+</head>
+</div>
+
 <body>
-     <div class="glitch"></div>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cartas en Cifrado 0.1</title>
+<div>
+        <h1> <img src= "https://i.ibb.co/Dpn3Ls4/bw-header.png"> </h1>
+        
+        <nav>   
+        
+           <ul>
+           <li><a href="#">NUEVO</a></li>
+           <li><a href="#">MAKE UP</a></li>
+           <li><a href="#">OTROS</a></li>
+           <li><a href="#">CUPONES</a></li>
+           <li><b href="#">ADMI</b></li>
+           <li><b href="#">NOSOTROS</b></li>
+           </ul>
+        
+        </nav> 
+    </div>
+<div id = "imagenPortada" >
+<img src= "https://i.ibb.co/xFHMCFM/holikaholika.jpg"></div>
 
 
-        <form>
+<div>
+    <section id = "seccionUno"> Bienvenida a Beauty Store Peru </section>
+</div>
+<div>
+    <section id="seccionDos">
+   
+        <input id="tuClave" type="number" placeholder="Ingresa tu clave">
 
-            <h1> EL CIFRADO COMPLICADO</h1>
-            <input id="tuClave" type="number">
+        <div>
+        <textarea id="cajadeTexto" type="text" placeholder="Ingresa tu mensaje"></textarea>
+        </div>
+    
+        <div>
+        <button id="btnCifrar" type="button" name="Cifrar">Cifrar</button>
+        <button id="btnDescifrar" type="button" name="Descifrar">Descifrar</button>
+        </div>
 
-            <br></br>
-            <textarea id="cajadeTexto" type="text"></textarea>
-            
-            <br></br>
-            <button id="btnCifrar" type="button" name="Cifrar">Cifrar</button>
-            <button id="btnDescifrar" type="button" name="Descifrar">Descifrar</button>
+        <div>
+        <textarea id="respuesta" type="text"> </textarea>
+        </div>
 
-            <br></br>
-            <textarea id="respuesta" type="text"> </textarea>
+        <div>
+        <input id="refrescar" type="button" value="Refrescar">
+        </div>
 
-            <br></br>
-            <input id="refrescar" type="button" value="Refrescar">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-           
-
-        </form>
-    </head>
-
+    </section>
+</div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="style.css"/>
-  
 
-<div class="glitch"></div>
-
-</body>
+</body>   
 </html>
